@@ -923,6 +923,12 @@ _.difference([1, 2, 3, 4, 5], [5, 2, 10]);
       <pre>
 _.uniq([1, 2, 1, 3, 1, 4]);
 =&gt; [1, 2, 3, 4]
+
+var plays = [{title: "Cymbeline", year: 1611},
+  {title: "The Tempest", year: 1611},
+  {title: "King Lear", year: 1608}];
+_.uniq(plays, function(play) { return play.year; });
+=&gt; [{title: "Cymbeline", year: 1611}, {title: "King Lear", year: 1608}];
 </pre>
 
       <p id="zip">
@@ -1069,7 +1075,7 @@ jQuery('#underscore_button').bind('click', buttonView.onClick);
         <br />
         Partially apply a function by filling in any number of its <b>arguments</b>,
         <i>without</i> changing its dynamic <tt>this</tt> value. A close cousin
-        of <a href="#bind">bind</a>. You may pass <tt>_</tt> in your list of 
+        of <a href="#bind">bind</a>. You may pass <tt>_</tt> in your list of
         <b>arguments</b> to specify an argument that should not be pre-filled, but
         left open to supply at call-time.
       </p>
